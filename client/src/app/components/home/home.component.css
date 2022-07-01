@@ -1,0 +1,40 @@
+#summary-container {
+    margin: 1em;
+}
+
+h1 {
+    color:rgb(31, 205, 21);
+    font-weight: bold;
+    font-size: xx-large;
+}
+
+div p{
+    font-weight: bold;
+    font-size: x-large;
+}
+
+div p span {
+    color:rgb(6, 190, 6);
+}
+
+#monthly-payment p {
+    color:red;
+}
+
+#monthly-payment p span{
+    color:red
+}
+
+#monthly-income p {
+    color: green;
+}
+
+#monthly-profit p {
+    color:rgb(31, 205, 21);
+}
+
+#map {
+    width: 100%;
+    height: 500px;
+    border: 2px black solid;
+}

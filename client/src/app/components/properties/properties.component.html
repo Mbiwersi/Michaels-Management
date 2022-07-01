@@ -1,0 +1,68 @@
+<app-nav></app-nav>
+<div id="header">
+    <h1>Properties</h1>
+    <div>
+        <label>Sort By</label>
+        <select id="filter" name="filter" (change)="sortProperties(properties)">
+            <option value="Address">Address</option>
+            <option value="Purchased">Purchase Date</option>
+            <option value="Rent">Rent</option>
+        </select>
+        <select id="direction" name="direction" (change)="sortProperties(properties)">
+            <option value=1>Accending</option>
+            <option value=-1>Descending</option>
+        </select>
+    </div>
+</div>
+<button id="add" (click)="showForm()" type="button" class="btn btn-success">Add Property</button>
+<form id="create-property-form">
+    <div>
+        <label for="address">Address</label>
+        <input id="address" type="text" #address>
+    </div>
+    <div>
+        <label for="city">City</label>
+        <input id="city" type="text" #city>
+    </div>
+    <div>
+        <label for="state">State</label>
+        <input id="state" type="text" #state>
+    </div>
+    <div>
+        <label for="monthly_rent">Monthly Rent</label>
+        <input id="monthly_rent" type="number" step="100" #rent>
+    </div>
+    <div>
+        <label for="monthly_cost">Monthly Cost</label>
+        <input id="monthly_cost" type="number" step="100" #cost>
+    </div>
+    <div>
+        <label for="num_bath">Number of Baths</label>
+        <input id="num_bath" type="number" #baths>
+    </div>
+    <div>
+        <label for="num_bed">Number of Beds</label>
+        <input id="num_bed" type="number" #beds>
+    </div>
+    <div>
+        <label for="owned_since">Purchased on</label>
+        <input id="owned_since" type="date" required #owned_since>
+    </div>
+    <div>
+        <label for="purchase_price">Purchase Price</label>
+        <input id="purchase_price" step="10000" type="number" #purchase_price>
+    </div>
+    <button (click)="createProperty(address.value + ', ' + city.value + ', ' + state.value, rent.value, cost.value, baths.value, beds.value, owned_since.value, purchase_price.value );
+     hideForm()" 
+    type="button" class="btn btn-success">Add</button>
+    <button id="cancel-btn" (click)="hideForm()" type="button" class="btn btn-warning">Cancel</button>
+</form>
+<ul id="properties">
+    <li *ngFor="let property of properties" [routerLink]="['/MichaelsManagement/api/v1/properties', property._id]">
+        <img  src="https://maps.googleapis.com/maps/api/streetview?location={{property.lat}},{{property.long}}&size=456x456&key=AIzaSyCTqhGk8JaIg-FouzFEByv1UHpTf1k3f1I">
+        <p>{{property.address}}</p>
+        <p>{{property.num_bed}} Bed, {{property.num_bath}} Bath </p>
+        <p>Owned Since: {{property.owned_since}}</p>
+        <button (click)="delete(property); $event.stopPropagation()" type="button" class="btn btn-danger">X</button>
+    </li>
+</ul>

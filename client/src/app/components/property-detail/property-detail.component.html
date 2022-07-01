@@ -1,0 +1,77 @@
+<app-nav></app-nav>
+<div id="header-container">
+    <h1>Property Detail</h1>
+    <div id="nav-btns">
+        <button id="edit-btn" (click)="showEditForm(); $event.stopPropagation()" type="button" class="btn btn-warning">Edit</button>
+        <button id="del-btn" (click)="delete(property); $event.stopPropagation()" type="button" class="btn btn-danger">Delete</button>
+        <button  [routerLink]="'/MichaelsManagement/properties'" type="button" class="btn btn-primary">Back</button>
+    </div>
+</div>
+<form id="edit-property-form" style="display: none">
+    <p id="required">Required fields is noted by *</p>
+    <div>
+        <label  for="address">Address</label>
+        <input id="address" value="{{property.address.split(',')[0]}}" type="text" #address>
+        <i id="required"> *</i>
+    </div>
+    <div>
+        <label for="city">City</label>
+        <input id="city" type="text" value="{{property.address.split(',')[1].trim()}}" #city>
+        <i id="required"> *</i>
+    </div>
+    <div>
+        <label for="state">State</label>
+        <input id="state" type="text" value="{{property.address.split(',')[2].trim()}}" #state>
+        <i id="required"> *</i>
+
+    </div>
+    <div>
+        <label  for="monthly_rent">Monthly rent</label>
+        <input id="monthly_rent" value="{{property.monthly_rent}}" type="number" #rent>
+        <i id="required"> *</i>
+    </div>
+    <div>
+        <label  for="monthly_cost">Monthly Cost</label>
+        <input id="monthly_cost" value="{{property.monthly_cost}}" type="number" #cost>
+        <i id="required"> *</i>
+    </div>
+    <div>
+        <label  for="num_bed">Number of Beds</label>
+        <input id="num_bed" value="{{property.num_bed}}" type="number" #bed>
+        <i id="required"> *</i>
+    </div>
+    <div>
+        <label  for="num_bath">Number of Bath</label>
+        <input id="num_bath" value="{{property.num_bath}}" type="number" #bath>
+        <i id="required"> *</i>
+    </div>
+    <div>
+        <label  for="owned_since">Purchased on</label>
+        <input id="owned_since" value="{{property.owned_since}}" type="date" #owned>
+        <i id="required"> *</i>
+    </div>
+    <div>
+        <label  for="purchase_price">Purchase Price</label>
+        <input id="purchase_price" value="{{property.purchase_price}}" type="number" #price>
+        <i id="required"> *</i>
+    </div>
+    <div id="btns">
+        <button (click)="editProperty(property._id, address.value, city.value, state.value.toUpperCase(), rent.value, cost.value, bed.value, bath.value, owned.value, price.value); hideEditForm()" type="button" class="btn btn-warning">Make Edit</button>
+        <button id="cancel-btn" (click)="hideEditForm()" type="button" class="btn btn-danger">Cancel</button>
+    </div>
+</form>
+<h2 id="due" *ngIf="due">RENT OVER DUE</h2>
+<h2 id="paid" *ngIf="!due">RENT PAID</h2>
+<div id="property-container">
+    <img  src="https://maps.googleapis.com/maps/api/streetview?location={{property.lat}},{{property.long}}&size=456x456&key=AIzaSyCTqhGk8JaIg-FouzFEByv1UHpTf1k3f1I">
+    <!-- <img *ngIf="!property.image" src="../../../assets/default_house_photo.png"> -->
+    <div *ngIf="property.num_bed != -1" id="info-container">
+        <p>{{property.address.replace(',',', ')}}</p>
+        <p>{{property.num_bed}} Bed, {{property.num_bath}} Bath</p>
+        <p>Owned Since: {{property.owned_since}}</p>
+        <p>Purchased For: ${{property.purchase_price | number}}</p>
+        <!-- <button  [routerLink]="'/documents'" type="button" class="btn btn-primary">View Documents</button> -->
+        <button  [routerLink]="['/MichaelsManagement/api/v1/properties', property._id, 'documents']" type="button" class="btn btn-primary">View Documents</button>
+    </div>
+    <div id="map" class="full"></div>
+</div>

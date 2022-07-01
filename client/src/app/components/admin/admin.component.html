@@ -1,0 +1,15 @@
+<app-nav></app-nav>
+<h1>Users</h1>
+<ul id="users">
+    <li *ngFor="let user of users">
+        <p *ngIf="user.admin">Admin</p>
+        <p *ngIf="!user.admin">User</p>
+        <p>{{user.first_name}} {{user.last_name}}</p>
+        <p>{{user.email}}</p>
+        <div id="buttons">
+            <button *ngIf="!user.admin" (click)="updateAdmin(user); $event.stopPropagation()" type="button" class="btn btn-primary">Make admin</button>
+            <button *ngIf="user.admin" (click)="updateAdmin(user); $event.stopPropagation()" type="button" class="btn btn-warning">Demote</button>
+            <button  (click)="removeUser(user); $event.stopPropagation()" type="button" class="btn btn-danger">X</button>
+        </div>
+    </li>
+</ul>

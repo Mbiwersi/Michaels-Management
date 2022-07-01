@@ -1,0 +1,36 @@
+*{
+    margin-bottom: .5em;
+}
+
+h1 {
+    margin-left: 5%;
+    /* outline: 1px red solid; */
+    padding-top: 2%
+}
+
+form {
+    margin-left: 5%;
+    display: inline-block;
+}
+
+form div {
+    display: flex;
+    justify-content: space-between;
+}
+
+label {
+    margin-right: 1em;
+}
+
+img {
+    width: 5%;
+    height: 5%;
+    margin-left: 5%;
+    /* outline: 1px purple solid; */
+}
+
+#header {
+    margin-top: 5%;
+    display: flex;
+    /* outline: 1px blue solid; */
+}

@@ -1,0 +1,30 @@
+<div id="success-alert2" data-dismiss="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+    <h3 class="alert-heading">Register Success</h3>
+</div>
+<div id="failed-alert2" data-dismiss="alert" class="alert alert-danger alert-dismissible fade show" role="alert">
+    <h3 class="alert-heading">Registration Failed</h3>
+</div>
+<div id="header">
+    <h1 id="reg-header">Register</h1>
+    <img src="../../../favicon.ico">
+</div>
+<form>
+    <div>
+        <label  for="first_name">First Name</label>
+        <input id="reg-first-name" type="text">
+    </div>
+    <div>
+        <label for="last_name">Last Name</label>
+        <input id="reg-last-name" type="text">
+    </div>
+    <div>
+        <label for="username">Email</label>
+        <input id="reg-username" type="text">
+    </div>
+    <div>
+        <label for="password">Password</label>
+        <input id="reg-password" type="password">
+    </div>
+    <button type="button" (click)="register(); $event.stopPropagation" class="btn btn-primary">Register</button>
+    <a routerLink="/MichaelsManagement/login" class="btn btn-link">Cancel</a>
+</form>

@@ -1,0 +1,47 @@
+<app-nav></app-nav>
+<div id="header-container">
+    <h1>Documents</h1>
+    <div id="btns">
+        <button id="add-doc" (click)="openForm()" type="button" class="btn btn-success">Add Document</button>
+        <button  [routerLink]="['/MichaelsManagement/api/v1/properties', property._id]" type="button" class="btn btn-primary">Back</button>
+    </div>
+</div>
+<select id="filter" name="filter" (change)="getDocuments(property)">
+    <option value="all">All</option>
+    <option value="Rent">Rent Payments</option>
+    <option value="Lease">Leases</option>
+    <option value="Maintenance">Maintenance</option>
+</select>
+<form id="create-doc-form">
+    <div>
+        <label for="type">Type</label>
+        <select id="type" name="type" #type>
+            <option value="Lease">Lease</option>
+            <option value="Maintenance">Maintenance</option>
+        </select>
+    </div>
+    <div>
+        <label for="notes">Notes</label>
+        <textarea name="notes" #notes></textarea>
+    </div>
+    <button id="add-btn" (click)="createDocument(property, type.value, notes.value); closeForm()" 
+    type="button" class="btn btn-success">Add</button>
+    <button id="cancel-btn" (click)="closeForm()" type="button" class="btn btn-warning">Cancel</button>
+</form>
+<h2>{{property.address}}</h2>
+<table id="documents">
+    <th>
+        <tr>
+            <td>Type</td>
+            <td>Notes</td>
+            <td>Date Posted</td>
+        </tr>
+    </th>
+    <tbody>
+        <tr *ngFor="let doc of documents">
+            <td>{{doc.type}}</td>
+            <td>{{doc.notes}}</td>
+            <td>{{doc.date.toString().substring(0,10)}}</td>
+        </tr>
+    </tbody>
+</table>

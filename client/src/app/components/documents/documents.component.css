@@ -1,0 +1,85 @@
+h1 {
+    /* margin-left: 5%; */
+    color:rgb(31, 205, 21);
+    font-weight: bold;
+}
+
+h2 {
+    margin-top: 1%;
+    margin-left: 3.5%;
+}
+
+#header-container {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin-left: 3.5%;
+    margin-top: 2.5%;
+}
+
+select {
+    margin: 0 3.5%;
+}
+
+#documents {
+    width: 90%;
+    margin-left: 2.5%;
+}
+
+#documents tr{
+    background-color: rgb(212, 211, 211);
+    margin: 1%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1%;
+}
+
+#documents tbody tr:hover {
+    background-color: rgb(179, 178, 178);
+    box-shadow: 5px 5px 15px;
+    cursor: pointer;
+}
+
+#documents tr button {
+    align-self: center;
+}
+
+#documents tbody tr td:first-of-type {
+    align-self: center;
+    font-weight: bold;
+    font-size:xx-large;
+}
+
+#documents tr td {
+    align-self: center;
+    font-size: x-large;
+}
+
+#create-doc-form {
+    margin-left: 3.5%;
+}
+
+label {
+    font-weight: bold;
+    font-size: large;
+    width: 100%;
+}
+
+#create-doc-form div{
+    display: flex;
+    justify-content: space-between;
+    width: 20%;
+    margin-bottom: 1em;
+}
+
+#add-doc {
+    margin-right: 1em;
+}
+
+#btns {
+    margin-right: 2.5%
+}
+
+#add-btn {
+    margin-right: 1em;
+}

@@ -1,0 +1,61 @@
+#properties li{
+    background-color: rgb(212, 211, 211);
+    margin: 1em;
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+}
+
+#properties li:hover {
+    background-color: rgb(179, 178, 178);
+    box-shadow: 5px 5px 15px;
+    cursor: pointer;
+}
+
+#properties li button {
+    align-self: center;
+}
+
+#properties li p:first-of-type {
+    align-self: center;
+    font-weight: bold;
+    font-size: 150%;
+}
+
+#properties li p:last-of-type {
+    font-weight: bold;
+    font-size: 150%;
+}
+
+h1 {
+    margin-left: 2.25%;
+    color:rgb(31, 205, 21);
+}
+
+form {
+    margin-left: 2.5%;
+}
+
+#properties li p {
+    align-self: center;
+    font-size: 125%;
+}
+
+#paid {
+    color: green;
+    font-weight: bold;
+}
+
+#due {
+    color:red;
+    font-weight: bold;
+}
+
+#not-due {
+    color: blue;
+    font-weight: bold;
+}
+
+p {
+   margin-left: 1%; 
+}

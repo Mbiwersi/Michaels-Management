@@ -1,0 +1,26 @@
+<app-nav></app-nav>
+<div id="profile">
+    <h1>Profile</h1>
+    <h2>First Name: {{user.first_name}}</h2>
+    <h2>Last Name: {{user.last_name}}</h2>
+    <h2>Email: {{user.email}}</h2>
+    <h2 *ngIf="user.admin">Admin</h2>
+    <h2 *ngIf="!user.admin">User</h2>
+    <button id="edit" class="btn btn-warning" (click)="showForm()">Edit</button>
+    <form id="user-form">
+        <div>
+            <label  for="first_name">First Name</label>
+            <input id="reg-first-name" value="{{user.first_name}}" type="text" #first>
+        </div>
+        <div>
+            <label for="last_name">Last Name</label>
+            <input id="reg-last-name" value="{{user.last_name}}" type="text" #last>
+        </div>
+        <div>
+            <label for="username">Email</label>
+            <input id="reg-username" value="{{user.email}}" type="text" #email>
+        </div>
+        <button class="btn btn-primary" type="button" (click)="updateUser(user._id, first.value, last.value, email.value);hideForm()">Make Edit</button>
+        <button class="btn btn-danger" type="button" (click)="hideForm()">Cancel</button>
+    </form>
+</div>

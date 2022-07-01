@@ -1,0 +1,40 @@
+h1 {
+    margin-left: 2%;
+    color:rgb(31, 205, 21);
+    font-weight: bold;
+}
+
+#users li{
+    background-color: rgb(212, 211, 211);
+    margin: 1em;
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+}
+
+#users li:hover {
+    background-color: rgb(179, 178, 178);
+    box-shadow: 5px 5px 15px;
+    cursor: pointer;
+}
+
+#users li button {
+    align-self: center;
+}
+
+#users li p:first-of-type {
+    align-self: center;
+    font-weight: bold;
+    font-size:xx-large;
+}
+
+#users li p {
+    align-self: center;
+    font-size: x-large;
+}
+
+#buttons {
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+}

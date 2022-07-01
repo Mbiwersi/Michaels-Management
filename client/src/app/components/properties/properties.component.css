@@ -1,0 +1,79 @@
+#header {
+    display: flex;
+    justify-content: space-between;
+}
+
+#header div{
+    margin-right: 5%;
+}
+
+select {
+    margin-top: 1%;
+}
+
+h1{
+    margin-left: 2.5%;
+    color:rgb(31, 205, 21);
+    font-weight: bold;
+}
+
+#create-property-form {
+    margin-left: 2.5%;
+}
+
+#create-property-form div{
+    display: flex;
+    justify-content: space-between;
+    width: 20%;
+    margin-bottom: 1em;
+}
+
+label {
+    font-weight: bold;
+    font-size: larger;
+    width: 100%;
+}
+
+#properties li{
+    background-color: rgb(212, 211, 211);
+    margin: 1em;
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+}
+
+#properties li:hover {
+    background-color: rgb(179, 178, 178);
+    box-shadow: 5px 5px 15px;
+    cursor: pointer;
+}
+
+#properties li button {
+    align-self: center;
+    margin-right: 2.5%;
+}
+
+#properties li p:first-of-type {
+    align-self: center;
+    font-weight: bold;
+    font-size:xx-large;
+}
+
+#properties li p {
+    align-self: center;
+    font-size: x-large;
+}
+
+#add {
+    margin-left: 2.5%;
+    margin-bottom: 1%;
+}
+
+#cancel-btn {
+    margin-left: 2%;
+}
+
+img {
+    width: auto;
+    height: 25vh;
+}

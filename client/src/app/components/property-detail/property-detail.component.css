@@ -1,0 +1,89 @@
+#header-container {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 1% 2.5%;
+}
+
+h1 {
+    color:rgb(31, 205, 21);
+    font-weight: bold;
+}
+
+#property-container {
+    display: flex;
+    width: 90%;
+    margin: 2.5%;
+}
+
+#property-container img{
+    width: 40%;
+    height: 30%;
+}
+
+#info-container {
+    margin-left: 5%;
+    text-align:left;
+    font-size:large;
+}
+
+#info-container p:first-of-type{
+    font-size: larger;
+    font-weight: bold;
+}
+
+#due {
+    color:red;
+    font-weight: bold;
+}
+
+#paid {
+    color: green;
+    font-weight: bold;
+}
+
+#map {
+    width: 400px;
+    height: 400px;
+    margin-left:5%;
+}
+
+h2 {
+    margin-left: 2.5%;
+    font-weight: bold;
+}
+
+#btns {
+    display: flex;
+}
+
+#edit-property-form {
+    margin-left: 2.5%;
+}
+
+#edit-property-form div{
+    display: flex;
+    justify-content: space-between;
+    width: 20%;
+    margin-bottom: 1em;
+}
+
+label {
+    width: 100%;
+}
+
+#map {
+    border: 2x black solid;
+}
+
+#edit-btn {
+    margin-right: 1em;
+}
+
+#del-btn {
+    margin-right: 1em;
+}
+
+#required {
+    color:red
+}

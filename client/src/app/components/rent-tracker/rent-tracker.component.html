@@ -1,0 +1,20 @@
+<app-nav></app-nav>
+<h1>Rent Tracker</h1>
+<form>
+    <div>
+        <input type="month" (change)="changeMonth()">
+    </div>
+</form>
+<ul id="properties">
+    <li *ngFor="let property of properties; let i = index" [routerLink]="['/MichaelsManagement/api/v1/properties', property._id]">
+        <img  src="https://maps.googleapis.com/maps/api/streetview?location={{property.lat}},{{property.long}}&size=456x456&key=AIzaSyCTqhGk8JaIg-FouzFEByv1UHpTf1k3f1I" style="width: 15%">
+        <p>{{property.address}}</p>
+        <p>Owned since: {{property.owned_since}}</p>
+        <p id="paid" *ngIf="paidProps[i] && !(selectedDate > currentDate)">PAID</p>
+        <p id="due" *ngIf="!paidProps[i] && !(selectedDate > currentDate)">DUE</p>
+        <p id="not-due" *ngIf="selectedDate > currentDate">NOT DUE YET</p>
+        <p *ngIf="paidProps[i] && !(selectedDate > currentDate)" style="color:green">${{property.monthly_rent}}</p>
+        <p *ngIf="!paidProps[i] && !(selectedDate > currentDate)" style="color:red">${{property.monthly_rent}}</p>
+        <button *ngIf="!paidProps[i] && !(selectedDate > currentDate)" (click)="paid(property); $event.stopPropagation()" type="button" class="btn btn-success">Paid</button>
+    </li>
+</ul>

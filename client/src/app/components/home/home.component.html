@@ -1,0 +1,17 @@
+<app-nav></app-nav>
+<div id="summary-container">
+    <h1>Summary</h1>
+    <div id="monthly-income">
+        <p>Monthly Income <span>${{income | number}}</span></p>
+    </div>
+    <div id="monthly-payment">
+        <p>Monthly Payment <span>${{payment | number}}</span></p>
+    </div>
+    <div id="monthly-profit">
+        <p>Monthly Profit 
+            <span *ngIf="profit >=0" style="color:rgb(6, 190, 6);">${{profit | number}}</span>
+            <span *ngIf="profit < 0" style="color:red;">${{profit | number}}</span>
+        </p>
+    </div>
+    <div id="map" class="full"></div>
+</div>
