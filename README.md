@@ -43,3 +43,16 @@ $ npm start
 $ ng serve --proxy-config proxy.conf.json
 ```
 Application should then run on <a href="http://localhost:4200/" target="_blank">http://localhost:4200/</a>
+
+## Example photos
+### Home Page
+<img src="https://github.com/Mbiwersi/Michaels-Management/blob/master/Home.PNG">
+
+### Properties Page
+<img src="https://github.com/Mbiwersi/Michaels-Management/blob/master/Properties.PNG">
+
+### Property detail Page
+<img src="https://github.com/Mbiwersi/Michaels-Management/blob/master/PD.PNG">
+
+### Admin User's Page
+<img src="https://github.com/Mbiwersi/Michaels-Management/blob/master/Users.PNG">
